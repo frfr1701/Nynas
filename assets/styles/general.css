@@ -1,0 +1,24 @@
+body > div > header {
+    background: url("../images/layout/header-sky.jpg");
+    background-size: cover;
+}
+
+figcaption {
+    font-size: 0.7em;
+}
+
+p {
+    font-size: 0.85em;
+}
+
+.svara input[type="radio"][value="yes"]:checked ~ .toggle_hide{
+    visibility: visible;
+ }
+ 
+.svara input[type="radio"][value="no"]:checked ~ .toggle_hide{
+    visibility: hidden;
+ }
+
+body > .container{
+    margin-bottom: 8em;
+}
