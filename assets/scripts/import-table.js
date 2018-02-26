@@ -22,7 +22,7 @@ ajax.onreadystatechange = function () {
 
 var city = 'nynashamn';
 var apikey = '7e483fda3799b98fc867a6231f62d3ed';
-ajax.open('GET', 'http://api.openweathermap.org/data/2.5/forecast?q=' + city +
+ajax.open('GET', 'https://api.openweathermap.org/data/2.5/forecast?q=' + city +
     '&APPID=' + apikey, true);
 ajax.send();
 
