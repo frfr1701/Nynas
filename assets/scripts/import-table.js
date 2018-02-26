@@ -1,9 +1,10 @@
+'use strict';
 //Anrop med javascript
 var ajax = new XMLHttpRequest();
 //denna anropas när anropet görs
 ajax.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
-        response = JSON.parse(this.response);
+        var response = JSON.parse(this.response);
         console.log(response);
         var time = new Array(5);
         var weather = new Array(5);
