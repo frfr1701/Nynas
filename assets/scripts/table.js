@@ -67,22 +67,26 @@ function TrainTable(container) {
     color: container.color
   });
   this.table = document.querySelector(container.table);
+  this.tfoot = document.createElement('tfoot');
   this.caption = document.createElement('caption');
+  prepareTFoot(this.tfoot);
   prepareCaption(this.caption);
   
-  function prepareCaption(captionContainer){
-    var p = document.createElement('p');
-    p.innerHTML = container.status;
-    p.className = 'ml-2';
-    captionContainer.appendChild(p);
+  function prepareTFoot(tfootcontainer){
+    var td = document.createElement('td');
+    td.innerHTML = container.status;
+    td.setAttribute('colspan','3');
+    tfootcontainer.appendChild(td);
+  }
+  function prepareCaption(captioncontainer){
     var trainGetInfo = document.getElementById('train-get-info');
-    var p2 = document.createElement('p');
-    p2.innerHTML = 'Åker från: ' + trainGetInfo.value;
-    p2.className = 'text-muted';
-    captionContainer.appendChild(p2);
+    captioncontainer.innerHTML = 'Åker från: ' + trainGetInfo.value;
   }
 }
 
+TrainTable.prototype.updateTFoot = function () {
+  this.table.appendChild(this.tfoot);
+}
 TrainTable.prototype.updateCaption = function () {
   this.table.appendChild(this.caption);
 }

@@ -57,10 +57,10 @@ trainButton.addEventListener('click', (event) => {
             ['42', '14:25', '15:23'],
         ],
         color: 'thead-dark',
-        status: 'inga problem i trafiken',
-        caption: ''
+        status: 'inga problem i trafiken'
     });
     trainTable.updateTable();
+    trainTable.updateTFoot();
     trainTable.updateCaption();
     event.preventDefault();
 });
