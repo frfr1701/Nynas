@@ -12,6 +12,9 @@ ajax.onreadystatechange = function () {
         var wind = new Array(5);
         for (var get = 0; get < 5; get++) {
             time[get] = new Date(response.list[get].dt_txt).getHours() + ":00";
+            if(time[get].length<5){
+                time[get] = '0' + time[get];
+            }
             weather[get] = (response.list[get].weather[0].description).charAt(0).toUpperCase() + response.list[get].weather[0].description.substring(1, response.list[get].weather[0].description.length);
             temp[get] = (Number(response.list[get].main.temp) - 273.15).toFixed(0) + '&#176;C';
             wind[get] = response.list[get].wind.speed.toFixed(0) + 'm/s';
